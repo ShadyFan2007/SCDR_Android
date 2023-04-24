@@ -54,6 +54,10 @@ int InitAudioPlayback()
     want.samples  = AUDIO_SAMPLES;
     want.channels = AUDIO_CHANNELS;
     want.callback = ProcessAudioPlayback;
+    if (SDL_Init(SDL_INIT_AUDIO) != 0) {
+        PrintLog("Unable to init SDL Audio Subsystem: %s", SDL_GetError());
+        return true; // no audio but game wont crash now
+    }
 
 #if RETRO_USING_SDL2
     if ((audioDevice = SDL_OpenAudioDevice(nullptr, 0, &want, &audioDeviceFormat, SDL_AUDIO_ALLOW_FREQUENCY_CHANGE)) > 0) {
