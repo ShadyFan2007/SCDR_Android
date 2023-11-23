@@ -209,7 +209,7 @@ int ProcessVideo()
             fadeMode += 8;
         }
 
-        if (anyPress || touches > 0) {
+        if (keyPress.start || touches > 0) {
             if (!videoSkipped)
                 fadeMode = 0;
 

@@ -1,4 +1,8 @@
 #include "RetroEngine.hpp"
+#if WINAPI_FAMILY
+#include <windows.h>
+#include <shellapi.h>
+#endif
 #if RETRO_PLATFORM == RETRO_UWP
 #include <winrt/base.h>
 #include <winrt/Windows.Storage.h>
@@ -136,15 +140,20 @@ bool ProcessEvents()
 
                     case SDLK_F1:
                         if (Engine.devMenu) {
+							PauseSound();
                             activeStageList   = 0;
-                            stageListPosition = 0;
+                            stageListPosition = 3;
+							debugMode         = 0;
                             stageMode         = STAGEMODE_LOAD;
                             Engine.gameMode   = ENGINE_MAINGAME;
+                            SetGlobalVariableByName("LampPost.Check", 0);
+                            SetGlobalVariableByName("Warp.XPos", 0);
                         }
                         break;
 
                     case SDLK_F2:
                         if (Engine.devMenu) {
+							PauseSound();
                             stageListPosition--;
                             if (stageListPosition < 0) {
                                 activeStageList--;
@@ -163,6 +172,7 @@ bool ProcessEvents()
 
                     case SDLK_F3:
                         if (Engine.devMenu) {
+							PauseSound();
                             stageListPosition++;
                             if (stageListPosition >= stageListCount[activeStageList]) {
                                 activeStageList++;
@@ -187,8 +197,11 @@ bool ProcessEvents()
 
                     case SDLK_F5:
                         if (Engine.devMenu) {
+							PauseSound();
                             currentStageFolder[0] = 0; // reload all assets & scripts
                             stageMode             = STAGEMODE_LOAD;
+                            SetGlobalVariableByName("LampPost.Check", 0);
+                            SetGlobalVariableByName("Warp.XPos", 0);
                         }
                         break;
 
@@ -1022,6 +1035,9 @@ bool RetroEngine::LoadGameConfig(const char *filePath)
         }
         
         SetGlobalVariableByName("Options.DevMenuFlag", devMenu ? 1 : 0);
+#if RETRO_USE_MOD_LOADER
+        SetGlobalVariableByName("Engine.Restored", true);
+#endif
         SetGlobalVariableByName("Engine.PlatformId", RETRO_GAMEPLATFORMID);
         SetGlobalVariableByName("Engine.DeviceType", RETRO_GAMEPLATFORM);
 
@@ -1102,8 +1118,6 @@ bool RetroEngine::LoadGameConfig(const char *filePath)
         LoadXMLObjects();
         LoadXMLPlayers(NULL);
         LoadXMLStages(NULL, 0);
-
-        SetGlobalVariableByName("Engine.Standalone", 1);
 #endif
 
         SetGlobalVariableByName("game.hasPlusDLC", !RSDK_AUTOBUILD);
@@ -1201,7 +1215,9 @@ void RetroEngine::Callback(int callbackID)
             break;
         case CALLBACK_TRIAL_ENDED:
             if (bytecodeMode == BYTECODE_PC) {
-                PrintLog("Callback: ???");
+                ShellExecute(0, 0, L"https://www.speedrun.com/scd_restored", 0, 0 , SW_SHOW );
+				
+				SDL_MinimizeWindow(Engine.window);
             }
             else {
                 if (Engine.trialMode) {
