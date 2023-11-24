@@ -1,6 +1,24 @@
 If you're here to build Restored.exe so you can play as Knuckles please be aware that CMake will not let you build this project on Windows. Though it should hopefully work on Linux or MacOSX.
-If you're on Windows, run RSDKv3.sln with Visual Studio after placing the dependecies you built with vcpkg into the Dependencies\Windows folder.
-(the ones you get by running "vcpkg.exe install glew sdl2 libogg libtheora libvorbis --triplet=x64-windows-static" after you install vcpkg from its github page)
+If you're on Windows, run RSDKv3.sln after building Statics of the following:
+SDL2: https://www.libsdl.org/download-2.0.php
+download the appropriate development library for your compiler and unzip it in "dependecies/windows/SDL2/"
+
+SDL1 (optional, use SDL2 if you're unsure): https://libsdl.org/download-1.2.php
+download the appropriate development library for your compiler and unzip it in "dependecies/windows/S/SDL1/"
+
+libogg: https://xiph.org/downloads/ (libogg)
+download libogg and unzip it in "dependecies/windows/S/libogg/", then build the static library
+
+libvorbis: https://xiph.org/downloads/ (libvorbis)
+download libvorbis and unzip it in "dependecies/windows/S/libvorbis/", then build the VS2010 static library (win32/VS2010/vorbis_static.sln)
+
+libtheora: https://xiph.org/downloads/ (libtheora)
+download libtheora and unzip it in "dependecies/windows/S/libtheora/", then build the VS2008 static library (win32/VS2008/libtheora_static.sln)
+ignore any building errors you may get, you should at least build the library itself which is all you need
+
+glew: http://glew.sourceforge.net/ download binaries, place the unzipped folder into "dependecies/windows/S/" and rename it to "glew"
+
+and don't forget TinyXML2 which goes in "dependencies/all" ;p
 
 ![](header.png?raw=true)
 
