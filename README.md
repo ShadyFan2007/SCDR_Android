@@ -18,7 +18,7 @@ ignore any building errors you may get, you should at least build the library it
 
 glew: http://glew.sourceforge.net/ download binaries, place the unzipped folder into "dependecies/windows/S/" and rename it to "glew"
 
-and don't forget TinyXML2 which goes in "dependencies/all" ;p
+and don't forget to clone the TinyXML2 git https://github.com/leethomason/tinyxml2 into a TinyXML2 folder which goes in "dependencies/all" ;p
 
 ![](header.png?raw=true)
 
