@@ -1,3 +1,7 @@
+If you're here to build Restored.exe so you can play as Knuckles please be aware that CMake will not let you build this project on Windows. Though it should hopefully work on Linux or MacOSX.
+If you're on Windows, run RSDKv3.sln with Visual Studio after placing the dependecies you built with vcpkg into the Dependencies\Windows folder.
+(the ones you get by running "vcpkg.exe install glew sdl2 libogg libtheora libvorbis --triplet=x64-windows-static" after you install vcpkg from its github page)
+
 ![](header.png?raw=true)
 
 A complete decompilation of Retro Engine v3.
