@@ -1217,10 +1217,12 @@ void RetroEngine::Callback(int callbackID)
             break;
         case CALLBACK_TRIAL_ENDED:
             if (bytecodeMode == BYTECODE_PC) {
+#if WINAPI_FAMILY
                 ShellExecute(0, 0, L"https://www.speedrun.com/scd_restored", 0, 0 , SW_SHOW );
 				
 				SDL_MinimizeWindow(Engine.window);
-            }
+#endif
+	    }
             else {
                 if (Engine.trialMode) {
                     PrintLog("Callback: Trial Ended Screen Requested");
