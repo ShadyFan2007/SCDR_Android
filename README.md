@@ -1,10 +1,8 @@
 If you're here to build Restored.exe so you can play as Knuckles please be aware that CMake will not let you build this project on Windows. Though it should hopefully work on Linux or MacOSX.
 If you're on Windows, run RSDKv3.sln after building Statics of the following:
+
 SDL2: https://www.libsdl.org/download-2.0.php
 download the appropriate development library for your compiler and unzip it in "dependecies/windows/SDL2/"
-
-SDL1 (optional, use SDL2 if you're unsure): https://libsdl.org/download-1.2.php
-download the appropriate development library for your compiler and unzip it in "dependecies/windows/S/SDL1/"
 
 libogg: https://xiph.org/downloads/ (libogg)
 download libogg and unzip it in "dependecies/windows/S/libogg/", then build the static library
