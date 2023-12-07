@@ -209,6 +209,20 @@ bool ProcessEvents()
                         }
                         break;
 
+                    case SDLK_F7:
+                        if (Engine.devMenu) {
+							PauseSound();
+                            Engine.LoadGameConfig("Data/Game/GameConfig.bin");
+                            activeStageList   = 0;
+                            stageListPosition = 3;
+							debugMode         = 1;
+                            stageMode         = STAGEMODE_LOAD;
+                            Engine.gameMode   = ENGINE_MAINGAME;
+                            SetGlobalVariableByName("LampPost.Check", 0);
+                            SetGlobalVariableByName("Warp.XPos", 0);
+                        }
+                        break;
+
                     case SDLK_F8:
                         if (Engine.devMenu)
                             showHitboxes ^= 2;
@@ -1124,6 +1138,8 @@ bool RetroEngine::LoadGameConfig(const char *filePath)
         LoadXMLStages(NULL, 0);
 #endif
 
+        //SetGlobalVariableByName("game.hasPlusDLC", !RSDK_AUTOBUILD);
+
 #if !RETRO_USE_ORIGINAL_CODE
         if (strlen(Engine.startSceneFolder) && strlen(Engine.startSceneID)) {
             SceneInfo *scene = &stageList[STAGELIST_BONUS][0xFE]; // slot 0xFF is used for "none" startStage
@@ -1222,7 +1238,7 @@ void RetroEngine::Callback(int callbackID)
 				
 				SDL_MinimizeWindow(Engine.window);
 #endif
-	    }
+            }
             else {
                 if (Engine.trialMode) {
                     PrintLog("Callback: Trial Ended Screen Requested");

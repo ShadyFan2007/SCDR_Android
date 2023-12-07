@@ -178,7 +178,7 @@ void ProcessStageSelect()
                 gameMenu[0].selection2 = count;
 
             DrawTextMenu(&gameMenu[0], SCREEN_CENTERX, 72);
-            if (keyPress.start || keyPress.A) {
+            if (keyPress.start || keyPress.A || keyPress.C) {
                 if (gameMenu[0].selection2 == 9) {
                     ClearGraphicsData();
                     ClearAnimationData();
@@ -264,7 +264,7 @@ void ProcessStageSelect()
 
             DrawTextMenu(&gameMenu[0], SCREEN_CENTERX - 4, 72);
             DrawTextMenu(&gameMenu[1], SCREEN_CENTERX - 40, 96);
-            if (keyPress.start || keyPress.A) {
+            if (keyPress.start || keyPress.A || keyPress.C) {
                 playerListPos = gameMenu[1].selection1;
                 SetupTextMenu(&gameMenu[0], 0);
                 AddTextMenuEntry(&gameMenu[0], "SELECT A STAGE LIST");
@@ -358,7 +358,7 @@ void ProcessStageSelect()
                 default: break;
             }
 
-            if ((keyPress.start || keyPress.A) && nextMenu) {
+            if ((keyPress.start || keyPress.A || keyPress.C) && nextMenu) {
                 SetupTextMenu(&gameMenu[0], 0);
                 AddTextMenuEntry(&gameMenu[0], "SELECT A STAGE");
                 SetupTextMenu(&gameMenu[1], 0);
@@ -436,7 +436,7 @@ void ProcessStageSelect()
 
             DrawTextMenu(&gameMenu[0], SCREEN_CENTERX - 4, 40);
             DrawTextMenu(&gameMenu[1], SCREEN_CENTERX + 100, 64);
-            if (keyPress.start || keyPress.A) {
+            if (keyPress.start || keyPress.A || keyPress.C) {
                 debugMode         = keyDown.A;
                 stageMode         = STAGEMODE_LOAD;
                 Engine.gameMode   = ENGINE_MAINGAME;
@@ -466,7 +466,7 @@ void ProcessStageSelect()
         case DEVMENU_SCRIPTERROR: // Script Error
         {
             DrawTextMenu(&gameMenu[0], SCREEN_CENTERX, 72);
-            if (keyPress.start || keyPress.A) {
+            if (keyPress.start || keyPress.A || keyPress.C) {
                 stageMode = DEVMENU_MAIN;
                 SetupTextMenu(&gameMenu[0], 0);
                 AddTextMenuEntry(&gameMenu[0], "RETRO ENGINE DEV MENU");
