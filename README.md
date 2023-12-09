@@ -5,7 +5,7 @@ SDL2: https://www.libsdl.org/download-2.0.php
 download the appropriate development library for your compiler and unzip it in "dependecies/windows/SDL2/"
 
 libogg: https://xiph.org/downloads/ (libogg)
-download libogg and unzip it in "dependecies/windows/libogg/", then build the static library with Visual Studio (\libogg\win32\VS2015\libogg.sln)
+download libogg and unzip it in "dependecies/windows/libogg/", then build the Release x64 configuration of the static library with Visual Studio (\libogg\win32\VS2015\libogg.sln - then click the Build Menu --> Configuration Manager) 
 
 libvorbis: https://xiph.org/downloads/ (libvorbis)
 download libvorbis and unzip it in "dependecies/windows/libvorbis/", then build the VS2010 static library with Visual Studio (win32/VS2010/vorbis_static.sln)
