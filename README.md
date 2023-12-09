@@ -5,13 +5,13 @@ SDL2: https://www.libsdl.org/download-2.0.php
 download the appropriate development library for your compiler and unzip it in "dependecies/windows/SDL2/"
 
 libogg: https://xiph.org/downloads/ (libogg)
-download libogg and unzip it in "dependecies/windows/libogg/", then build the static library
+download libogg and unzip it in "dependecies/windows/libogg/", then build the static library with Visual Studio
 
 libvorbis: https://xiph.org/downloads/ (libvorbis)
-download libvorbis and unzip it in "dependecies/windows/libvorbis/", then build the VS2010 static library (win32/VS2010/vorbis_static.sln)
+download libvorbis and unzip it in "dependecies/windows/libvorbis/", then build the VS2010 static library with Visual Studio (win32/VS2010/vorbis_static.sln)
 
 libtheora: https://xiph.org/downloads/ (libtheora)
-download libtheora and unzip it in "dependecies/windows/libtheora/", then build the VS2008 static library (win32/VS2008/libtheora_static.sln)
+download libtheora and unzip it in "dependecies/windows/libtheora/", then build the VS2008 static library with Visual Studio (win32/VS2008/libtheora_static.sln)
 ignore any building errors you may get, you should at least build the library itself which is all you need
 
 glew: http://glew.sourceforge.net/ download binaries, place the unzipped folder into "dependecies/windows/" and rename it to "glew"
