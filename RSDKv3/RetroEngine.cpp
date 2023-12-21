@@ -1138,7 +1138,7 @@ bool RetroEngine::LoadGameConfig(const char *filePath)
         LoadXMLStages(NULL, 0);
 #endif
 
-        SetGlobalVariableByName("game.hasPlusDLC", 1);
+//        SetGlobalVariableByName("game.hasPlusDLC", 1);
 
 #if !RETRO_USE_ORIGINAL_CODE
         if (strlen(Engine.startSceneFolder) && strlen(Engine.startSceneID)) {
