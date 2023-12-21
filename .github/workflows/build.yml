@@ -51,7 +51,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: v3-windows
+          name: OGL-x86
           path: artifacts
   OGL-x64:
     runs-on: windows-2022
@@ -98,7 +98,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: v3-windows-x64
+          name: OGL-x64
           path: artifacts
   SDL2-x64:
     runs-on: windows-2022
@@ -145,7 +145,7 @@ jobs:
       - name: Upload artifacts
         uses: actions/upload-artifact@v1.0.0
         with:
-          name: v3-windows-x64
+          name: SDL2-x64
           path: artifacts
   v3-linux:
     runs-on: ubuntu-latest
