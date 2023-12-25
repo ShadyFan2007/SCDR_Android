@@ -1,8 +1,8 @@
 If you're here to build Restored.exe so you can play as Knuckles please be aware that CMake will not let you build this project on Windows. Though it should hopefully work on Linux or MacOSX.
 
-1. You can grab all the Windows Dependencies at once here: https://www.mediafire.com/file/mrzw3lonj79mivt/windows.rar/file
+1. Install Visual Studio, clone this Repo, and grab the Windows Dependencies at once here: https://www.mediafire.com/file/mrzw3lonj79mivt/windows.rar/file
 
-2. Extract them into your Dependencies folder and then run RSDKv3.sln
+2. Extract them into your Dependencies folder from the Cloned Repo and then run RSDKv3.sln
 
 3. Click the Build Menu at the top of the screen then click Configuration Manager...
 
