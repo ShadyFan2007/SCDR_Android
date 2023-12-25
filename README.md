@@ -1,7 +1,6 @@
 If you're here to build Restored.exe so you can play as Knuckles please be aware that CMake will not let you build this project on Windows. Though it should hopefully work on Linux or MacOSX.
 
 You can grab all the Windows Dependencies at once here: https://www.mediafire.com/file/mrzw3lonj79mivt/windows.rar/file
-
 Extract them into your Dependencies folder and then run RSDKv3.sln
 Click the Build Menu at the top of the screen then click Configuration Manager...
 Change the Active Solution Configuration from Debug to Release
