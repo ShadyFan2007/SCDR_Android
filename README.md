@@ -77,7 +77,7 @@ Install the following dependencies: then follow the [compilation steps below](#c
 - Your favorite package manager here, [make a pull request](https://github.com/Rubberduckycooly/Sonic-CD-11-Decompilation/fork)
 
 ## Android
-Follow the android build instructions [here.](./dependencies/android/README.md)
+Follow the android build instructions: https://gamebanana.com/tuts/17490
 
 ### Compiling
 
